@@ -9,6 +9,8 @@ yarn start
 
 ### Web Component
 
+Polymer 看了下，其实也是个 mvvm 框架，不想再操心了。
+
 + inline.html
 
     内联在 html 文件里的写法，来源：

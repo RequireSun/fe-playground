@@ -1,10 +1,11 @@
 <div class="container">
     <div class="mask"></div>
     <div class="inner">
-        <h3 class="title">test</h3>
+        <h3 class="title"></h3>
         <p class="content"></p>
+        <slot name="rich-media"></slot>
         <button class="cancel"></button>
-        <button class="confirm"></button>
-        <button class="close"></button>
+        <button class="confirm">确认(内部修改 title)</button>
+        <button class="close">取消</button>
     </div>
 </div>

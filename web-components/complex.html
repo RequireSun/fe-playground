@@ -7,6 +7,19 @@
     <script type="module" src="/web-components/components/my-dialog-complex/index.js"></script>
 </head>
 <body>
-    <my-dialog-complex title="测试标题" content="测试内容"></my-dialog-complex>
+    <my-dialog-complex title="测试标题" content="测试内容">
+        <img slot="rich-media" src="https://via.placeholder.com/150" alt="">
+    </my-dialog-complex>
+
+    <button class="outer">外部修改 title</button>
+
+    <script>
+        const $btnOuter = document.querySelector('.outer');
+        const $el = document.querySelector('my-dialog-complex');
+
+        $btnOuter.addEventListener('click', () => {
+            $el.setAttribute('title', '123123123');
+        });
+    </script>
 </body>
 </html>
