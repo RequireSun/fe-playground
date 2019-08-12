@@ -1,0 +1,30 @@
+<div id="my-dialog">
+    <div class="container">
+        <div class="mask"></div>
+        <div class="inner">
+            <h3 class="title">test</h3>
+            <p class="content"></p>
+            <button class="cancel"></button>
+            <button class="confirm"></button>
+            <button class="close"></button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const importDoc = import.meta.document;
+    console.log(123);
+
+    class Dialog extends HTMLElement {
+        constructor() {
+            super();
+            const shadowRoot = this.attachShadow({
+                mode: 'open',
+            });
+            const template = importDoc.getElementById('my-dialog');
+            shadowRoot.appendChild(template.content.clone(true));
+        }
+    }
+
+    window.customElements.define('my-dialog', Dialog);
+</script>

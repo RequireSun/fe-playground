@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="import" href="/web-components/components/dialog/index.html">
 </head>
 <body>
     test
+
+<!--    <my-dialog></my-dialog>-->
+    <script>
+        let importDoc = document.querySelector('link').import;
+        let myDialog = importDoc.querySelector('#my-dialog');
+        document.body.appendChild(myDialog);
+    </script>
 </body>
+<!--<script type="text/html" src="./components/dialog/index.html"></script>-->
+<!--<script type="module">-->
+<!--    import Dialog from './components/dialog/index.html';-->
+
+<!--    console.log(Dialog);-->
+<!--</script>-->
 </html>
