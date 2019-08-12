@@ -38,3 +38,9 @@ yarn start
     一个已经过期的 Polyfill：
     
     [https://github.com/webcomponents/html-imports](https://github.com/webcomponents/html-imports)
+
++ complex.html
+
+    一个综合性的 demo，API 都用了一下，参考 MDN 比较好用的文档：
+    
+    [https://developer.mozilla.org/zh-CN/docs/Web/Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
