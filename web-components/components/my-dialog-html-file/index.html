@@ -1,10 +1,3 @@
-class Dialog extends HTMLElement {
-    constructor() {
-        super();
-        const shadowRoot = this.attachShadow({
-            mode: 'open',
-        });
-        shadowRoot.innerHTML = `
 <div class="container">
     <div class="mask"></div>
     <div class="inner">
@@ -15,8 +8,3 @@ class Dialog extends HTMLElement {
         <button class="close"></button>
     </div>
 </div>
-        `;
-    }
-}
-
-window.customElements.define('my-dialog-js-module', Dialog);
