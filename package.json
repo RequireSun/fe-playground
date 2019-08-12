@@ -1,0 +1,22 @@
+{
+  "name": "fe-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve -l 9907"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RequireSun/fe-playground.git"
+  },
+  "author": "RequireSun <kelvinsen@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RequireSun/fe-playground/issues"
+  },
+  "homepage": "https://github.com/RequireSun/fe-playground#readme",
+  "dependencies": {
+    "serve": "^11.1.0"
+  }
+}
