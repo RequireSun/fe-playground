@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <template id="my-dialog">
     <div class="container">
         <div class="mask"></div>
@@ -13,9 +11,8 @@
     </div>
 </template>
 
-<script>
+<script type="module">
     const importDoc = import.meta.document;
-    console.log(123);
 
     class Dialog extends HTMLElement {
         constructor() {

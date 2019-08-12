@@ -5,18 +5,19 @@
     <title>Title</title>
 
     <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-<!--    <link rel="import" href="/web-components/components/dialog/index.html">-->
+    <link rel="import" href="/web-components/components/my-dialog/index.html">
 </head>
 <body>
     test
 
-    <my-dialog></my-dialog>
+<!--    <my-dialog></my-dialog>-->
     <script>
-        // let importDoc = document.querySelector('link').import;
+        let importDoc = document.querySelector('link[rel=import]');
+        console.log(importDoc.import);
         // let myDialog = importDoc.querySelector('#my-dialog');
         // document.body.appendChild(myDialog);
     </script>
-    <script type="module" src="/web-components/components/dialog/index.html"></script>
+<!--    <script type="module" src="/web-components/components/my-dialog/index.html"></script>-->
 </body>
 <!--<script type="module">-->
 <!--    import Dialog from './components/dialog/index.html';-->
