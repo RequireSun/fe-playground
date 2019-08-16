@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+    <title>Jump QQ or AppStore</title>
+</head>
+<body>
+
+<h1>I'll jump to QQ or AppStore!</h1>
+
+</body>
+
+<script>
+    const url = 'mqqapi://msg_list/forward_msg_list';
+
+    function wxCallQQ(url) {
+        WeixinJSBridge && WeixinJSBridge.invoke('launchApplication', {
+            "schemeUrl": url //需要被拉起第三方 APP 能处理的自定义 scheme URL
+        }, function (res) {
+            alert(res.errMsg);
+            if (res.errMsg === 'launchapplication:fail') {
+                window.location.href = 'itms-apps://itunes.apple.com/cn/app/qq-2011/id444934666?mt=8';
+            }
+        })
+    }
+
+    if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+        wxCallQQ(url);
+    } else {
+        if (document.addEventListener) {
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                wxCallQQ(url)
+            }, false);
+        } else if (document.attachEvent) {
+            document.attachEvent("WeixinJSBridgeReady", function () {
+                wxCallQQ(url)
+            });
+            document.attachEvent("onWeixinJSBridgeReady", function () {
+                wxCallQQ(url)
+            });
+        }
+    }
+</script>
+</html>
