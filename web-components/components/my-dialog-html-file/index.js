@@ -1,4 +1,4 @@
-fetch( '/web-components/components/my-dialog-html-file/index.html' )
+fetch( './components/my-dialog-html-file/index.html' )
     .then(steam => steam.text())
     .then(text => {
         class Dialog extends HTMLElement {

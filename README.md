@@ -50,3 +50,13 @@ Polymer 看了下，其实也是个 mvvm 框架，不想再操心了。
     一个综合性的 demo，API 都用了一下，参考 MDN 比较好用的文档：
     
     [https://developer.mozilla.org/zh-CN/docs/Web/Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
+
+### [Wechat](./wechat)
+
++ [jump-app-store.html](./wechat/jump-app-store.html)
+
+    拉起 AppStore 下载 QQ.
+    
++ [jump-qq-or-app-store.html](./wechat/jump-qq-or-app-store.html)
+
+    这个里面用到的 API 好像需要微信白名单, 所以不一定能用.
