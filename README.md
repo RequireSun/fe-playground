@@ -60,3 +60,7 @@ Polymer 看了下，其实也是个 mvvm 框架，不想再操心了。
 + [jump-qq-or-app-store.html](./wechat/jump-qq-or-app-store.html)
 
     这个里面用到的 API 好像需要微信白名单, 所以不一定能用.
+
++ [qr-code.html](./wechat/qr-code.html)
+
+    尝试 H5 中拉起小程序.
