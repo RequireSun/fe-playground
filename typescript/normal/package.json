@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node scripts/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "vue-property-decorator": "^8.3.0",
     "vue-template-compiler": "^2.6.11",
     "vuex-class": "^0.3.2",
-    "webpack": "^4.41.5"
+    "webpack": "^4.41.5",
+    "webpack-dev-server": "^3.10.1"
   }
 }

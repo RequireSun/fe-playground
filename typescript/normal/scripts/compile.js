@@ -1,7 +1,7 @@
-const webpack = require('webpack');
+const Webpack = require('webpack');
 const conf = require('../webpack.config');
 
-webpack(conf, (err, stats) => {
+return Webpack(conf, (err, stats) => {
     if (err || stats.hasErrors()) {
         // 在这里处理错误
         console.error(err);
