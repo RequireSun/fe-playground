@@ -1,3 +1,7 @@
+/**
+ * 使用方法详见:
+ * https://webpack.docschina.org/api/node/#webpack-
+ */
 const Webpack = require('webpack');
 const conf = require('../webpack.config');
 
