@@ -10,5 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "loader-utils": "^1.2.3"
+  },
+  "devDependencies": {
+    "highlight.js": "^9.17.1",
+    "highlightjs-vue": "^1.0.0"
   }
 }

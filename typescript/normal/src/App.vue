@@ -1,5 +1,7 @@
 <template>
-    <index></index>
+    <div class="markdown-body">
+        <index></index>
+    </div>
 </template>
 
 <script lang="ts">

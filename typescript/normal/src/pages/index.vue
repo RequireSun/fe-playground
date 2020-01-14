@@ -6,6 +6,7 @@
         <idea-component ref="ic"></idea-component>
         <button @click="handleClickIdea">click +1 (outer)</button>
         <h2>IDEA 会报错 VSCode 不会报错的方法</h2>
+        <!-- WEBPACK_SNIPPET_LOADER ../components/vscode-component.vue -->
         <vscode-component ref="vc"></vscode-component>
         <button @click="handleClickVscode">click +1 (outer)</button>
     </div>

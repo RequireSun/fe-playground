@@ -1,6 +1,7 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, 'src/main.ts'),
@@ -25,6 +26,11 @@ module.exports = {
                 },
             }, ],
         }, {
+            test: /\.css$/,
+            use: [{
+                loader: 'css-loader',
+            }, ],
+        }, {
             test: /\.vue$/,
             use: [{
                 loader: 'vue-loader',
@@ -40,6 +46,10 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
+        new CopyPlugin([{
+            from: 'node_modules/highlight.js/styles/solarized-light.css',
+            to: 'solarized-light.css'
+        }]),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src/public/index.html'),
         }),
