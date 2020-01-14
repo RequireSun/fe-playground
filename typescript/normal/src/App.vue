@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Index from './pages/Index.vue';
+import Index from './pages/index.vue';
 
 @Component({
     components: {

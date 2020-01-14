@@ -1,27 +1,42 @@
 <template>
     <div>
-        <h1>hello</h1>
-        <some-component ref="sc"></some-component>
-        <button @click="handleClick">click +1 (outer)</button>
+        <h1>自定义组件</h1>
+        <h2>IDEA & VSCode 都不会报错的方法</h2>
+        <!-- WEBPACK_SNIPPET_LOADER ../components/idea-component.vue -->
+        <idea-component ref="ic"></idea-component>
+        <button @click="handleClickIdea">click +1 (outer)</button>
+        <h2>IDEA 会报错 VSCode 不会报错的方法</h2>
+        <vscode-component ref="vc"></vscode-component>
+        <button @click="handleClickVscode">click +1 (outer)</button>
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import SomeComponent, { FixComponent as FixSomeComponent } from '../components/some-component.vue';
+import IdeaComponent, { FixComponent as FixIdeaComponent } from '../components/idea-component.vue';
+import VscodeComponent from '../components/vscode-component.vue';
 
 @Component({
     components: {
-        SomeComponent,
+        IdeaComponent,
+        VscodeComponent,
     },
 })
 export default class Index extends Vue {
     $refs!: {
-        sc: FixSomeComponent,
+        ic: FixIdeaComponent,
+        vc: VscodeComponent,
     };
 
-    handleClick() {
-        this.$refs.sc.increase();
+    handleClickIdea() {
+        // VSCode IDEA 都正常工作
+        this.$refs.ic.increase();
+    }
+
+    handleClickVscode() {
+        // VSCode 正常工作
+        // IDEA 会提示找不到方法的错误 (TS2339), 但是 ctrl + 左键还是能正常跳转到定义位置
+        this.$refs.vc.increase();
     }
 }
 </script>

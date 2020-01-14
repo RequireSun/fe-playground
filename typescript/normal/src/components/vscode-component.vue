@@ -8,12 +8,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-export interface FixComponent extends SomeComponent {
-    increase(): void;
-}
-
 @Component
-export default class SomeComponent extends Vue {
+export default class VscodeComponent extends Vue {
     count: number = 0;
 
     public increase() {

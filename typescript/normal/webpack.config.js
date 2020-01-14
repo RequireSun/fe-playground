@@ -11,8 +11,9 @@ module.exports = {
         rules: [{
             test: /\.ts$/,
             use: [{
-                loader: 'babel-loader',
-            }, {
+            // 好像不用 babel 也 ok (毕竟我 ts 的产物是 es5 的
+            //     loader: 'babel-loader',
+            // }, {
                 loader: 'ts-loader',
                 options: {
                     // configFile: 'tsconfig.json',
@@ -25,7 +26,11 @@ module.exports = {
             }, ],
         }, {
             test: /\.vue$/,
-            loader: 'vue-loader',
+            use: [{
+                loader: 'vue-loader',
+            }, {
+                loader: path.resolve(__dirname, '../webpack-snippet-loader'),
+            }, ]
         }, ],
     },
     devtool: 'source-map',
