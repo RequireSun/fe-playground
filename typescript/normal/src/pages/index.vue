@@ -4,6 +4,7 @@
         <!-- WEBPACK_SNIPPET_LOADER_GUIDEPOST end:IDEA end:VSCODE -->
         <h1>自定义组件</h1>
         <h2>IDEA & VSCode 都不会报错的方法</h2>
+        <p>示例:</p>
         <!-- WEBPACK_SNIPPET_LOADER_GUIDEPOST start:IDEA -->
         <idea-component ref="ic"></idea-component>
         <button @click="handleClickIdea">click +1 (outer)</button>
@@ -15,10 +16,11 @@
         <p><em>index.vue</em></p>
         <!-- WEBPACK_SNIPPET_LOADER ./index.vue#TAG:IDEA -->
         <h2>IDEA 会报错 VSCode 不会报错的方法</h2>
-        <p><em>vscode-component.vue</em></p>
-        <!-- WEBPACK_SNIPPET_LOADER ../components/vscode-component.vue -->
+        <p>示例:</p>
         <vscode-component ref="vc"></vscode-component>
         <button @click="handleClickVscode">click +1 (outer)</button>
+        <p><em>vscode-component.vue</em></p>
+        <!-- WEBPACK_SNIPPET_LOADER ../components/vscode-component.vue -->
         <!-- WEBPACK_SNIPPET_LOADER_GUIDEPOST start:IDEA -->
     </div>
 </template>
