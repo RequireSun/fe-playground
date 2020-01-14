@@ -21,6 +21,10 @@ module.exports = {
                         '\\.vue$',
                     ],
                     happyPackMode: false,
+                    // 因为 ts 编译后会直接覆写原文件, 导致后续流程处理出错
+                    // 这里设置为 true 便可只保留内存中的编译结果, 不再回写
+                    // 详见:
+                    // https://webpack.toobug.net/zh-cn/chapter6/ts-and-vue.html
                     transpileOnly: true,
                 },
             }, ],
