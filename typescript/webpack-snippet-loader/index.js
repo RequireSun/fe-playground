@@ -9,7 +9,7 @@ const path = require('path');
 const hljs = require('highlight.js/lib/highlight.js');
 const hljsDefineVue = require('highlightjs-vue/dist/highlightjs-vue.esm');
 
-const regex = /^\s*<!--\s*WEBPACK_SNIPPET_LOADER\s*([\w-./#:]+)\s*-->\s*$/gm;
+const regex = /^\s*<!--\s*WEBPACK_SNIPPET_LOADER\s*([\w-./#:]+)(?:\s*LANGUAGE:(\w+))?\s*-->\s*$/gm;
 const regexGuidepostHtml = /^\s*<!--\s*WEBPACK_SNIPPET_LOADER_GUIDEPOST((?:\s(?:start|end):\w+)+)\s*-->\s*$/m;
 const regexGuidepostJavascript1 = /^\s*\/\*\s*WEBPACK_SNIPPET_LOADER_GUIDEPOST((?:\s(?:start|end):\w+)+)\s*\*\/\s*$/m;
 const regexGuidepostJavascript2 = /^\s*\/\/\s*WEBPACK_SNIPPET_LOADER_GUIDEPOST((?:\s(?:start|end):\w+)+)\s*$/m;
@@ -44,7 +44,7 @@ module.exports = function(source) {
     // const options = getOptions(this);
     const { resourcePath } = this;
 
-    return source.replace(regex, (allTag, filePath, startPos, allStr) => {
+    return source.replace(regex, (allTag, filePath, language, startPos, allStr) => {
         let parts;
         let tag;
 
@@ -133,6 +133,6 @@ module.exports = function(source) {
             }, []).join('\n');
         }
 
-        return `<pre code-snippet><code>${vueQuoteEncode(hljs.highlight('vue', fileContent).value)}</code></pre>`;
+        return `<pre code-snippet><code>${vueQuoteEncode(hljs.highlight(language ? language : 'vue', fileContent).value)}</code></pre>`;
     });
 };
