@@ -21,6 +21,10 @@
         <button @click="handleClickVscode">click +1 (outer)</button>
         <p><em>vscode-component.vue</em></p>
         <!-- WEBPACK_SNIPPET_LOADER ../components/vscode-component.vue -->
+        <h2>独立 .d.ts 文件声明</h2>
+        <p>示例:</p>
+        <separate-component ref="sc"></separate-component>
+        <button @click="handleClickSeparate">click +1 (outer)</button>
         <!-- WEBPACK_SNIPPET_LOADER_GUIDEPOST start:IDEA -->
     </div>
 </template>
@@ -30,6 +34,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import IdeaComponent, { FixComponent as FixIdeaComponent } from '../components/idea-component.vue';
 /* WEBPACK_SNIPPET_LOADER_GUIDEPOST end:IDEA */
 import VscodeComponent from '../components/vscode-component.vue';
+import SeparateComponent from '../components/separate-component.vue';
 // WEBPACK_SNIPPET_LOADER_GUIDEPOST start:IDEA
 
 @Component({
@@ -37,6 +42,7 @@ import VscodeComponent from '../components/vscode-component.vue';
         IdeaComponent,
         // WEBPACK_SNIPPET_LOADER_GUIDEPOST end:IDEA
         VscodeComponent,
+        SeparateComponent,
         /* WEBPACK_SNIPPET_LOADER_GUIDEPOST start:IDEA */
     },
 })
@@ -45,6 +51,7 @@ export default class ChildMethod extends Vue {
         ic: FixIdeaComponent,
         /* WEBPACK_SNIPPET_LOADER_GUIDEPOST end:IDEA */
         vc: VscodeComponent,
+        sc: SeparateComponent,
         /* WEBPACK_SNIPPET_LOADER_GUIDEPOST start:IDEA */
     };
 
@@ -59,6 +66,12 @@ export default class ChildMethod extends Vue {
         // IDEA 会提示找不到方法的错误 (TS2339), 但是 ctrl + 左键还是能正常跳转到定义位置
         this.$refs.vc.increase();
     }
+
+    handleClickSeparate() {
+        // VSCode IDEA 都正常工作
+        this.$refs.sc.increase();
+    }
+
     /* WEBPACK_SNIPPET_LOADER_GUIDEPOST start:IDEA */
 }
 </script>
