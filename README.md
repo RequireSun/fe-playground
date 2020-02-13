@@ -64,3 +64,7 @@ Polymer 看了下，其实也是个 mvvm 框架，不想再操心了。
 + [qr-code.html](./wechat/qr-code.html)
 
     尝试 H5 中拉起小程序.
+    
+## TODOs
+
+- [ ] vue 的构建脚本统一一下

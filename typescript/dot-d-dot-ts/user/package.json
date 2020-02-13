@@ -1,15 +1,15 @@
 {
-  "name": "export-library",
+  "name": "user",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "types": "types",
+  "main": "index.js",
   "scripts": {
     "build": "tsc --project tsconfig.json --outDir dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "export-library": "*"
   }
 }

@@ -11,8 +11,6 @@
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "declaration": true,
-    "declarationDir": "types",
     "baseUrl": ".",
     "lib": [
       "esnext",
