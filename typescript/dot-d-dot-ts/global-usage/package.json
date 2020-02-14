@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --project tsconfig.json --outDir dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "highlight.js": "^9.18.1"
+    "typescript": "^3.7.5"
   }
 }
