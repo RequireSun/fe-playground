@@ -26,3 +26,11 @@
 详情请见:
 
 [global-usage](global-usage)
+
+## 为特定类型文件提供导出类型声明
+
+某些特定类型的文件 (如 .vue), typescript 并不认识它的默认输出, 此时便可通过 shims 文件进行默认导出的类型修复
+
+详情请见:
+
+[shims-vue](shims-vue)
