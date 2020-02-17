@@ -17,3 +17,8 @@ export const multiple = (...args: number[]) => args.reduce((prev, cur) => prev *
  * 伪装成 jsdoc 的普通多行注释
  */
 export const divided = (...args: number[]) => args.reduce((prev, cur) => prev / cur, (args[0] || 0) * (args[0] || 0));
+
+export interface MyNumber {
+    abs: number;
+    isMinus: boolean;
+}
