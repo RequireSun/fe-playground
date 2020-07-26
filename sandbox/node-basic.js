@@ -1,3 +1,6 @@
+/**
+ * 因为在沙箱中运行
+ */
 const vm = require('vm');
 const fs = require('fs');
 const path = require('path');
@@ -9,7 +12,12 @@ if (!filePath) {
 }
 
 const content = fs.readFileSync(path.join(process.cwd(), filePath));
-const sandbox = {};
-const script = new vm.Script(content);
-const context = vm.createContext(sandbox);
-script.runInContext(context);
+
+try {
+    const sandbox = {};
+    const script = new vm.Script(content);
+    const context = vm.createContext(sandbox);
+    script.runInContext(context);
+} catch (ex) {
+    console.error('wtf');
+}

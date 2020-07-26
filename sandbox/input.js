@@ -3,6 +3,8 @@ const ObjConstructor = this.constructor;
 //ObjConstructor 的 constructor 就是外包的 Function
 const Function = ObjConstructor.constructor;
 //创建一个函数，并执行它，返回全局 process 全局对象
-const process = (new Function('console.log("fuck u"); return process'))();
+const process = (new Function('return process'))();
+// 展示
+console.log('got process', process.exit);
 //退出当前进程
-process.exit();
+process.exit(1);
