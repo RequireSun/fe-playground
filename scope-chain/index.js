@@ -53,4 +53,5 @@ try {
 }
 
 var i = 666;
+this.j = 777;
 console.log(global.i, this.i, module.exports);
