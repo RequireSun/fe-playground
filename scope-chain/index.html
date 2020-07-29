@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hello, World!</h1>
+</body>
+<script>
+    c = 3;
+    // 在浏览器环境就可以读到了
+    var d = 4;
+    const foo = new Function('a', 'b', 'console.log(a, b, c, d); return a + b + c;');
+    console.log(foo(1, 2));
+
+    const bar = function (fn) {
+        var c = 4;
+        var d = 5;
+        return fn(1, 2);
+    };
+
+    console.log(bar(foo));
+
+    var e = 1;
+    var f = 2;
+    var g = 3;
+    var h = 4;
+
+    const loop1 = () => {
+        var f = 5;
+        return function loop2 () {
+            var g = 6;
+            return function loop3 () {
+                var h = 7;
+                return new Function('console.log(e, f, g, h);');
+            };
+        };
+    };
+
+    loop1()()()();
+</script>
+</html>
