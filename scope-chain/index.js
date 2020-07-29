@@ -46,4 +46,11 @@ const loop1 = () => {
     };
 };
 
-console.log(loop1()()()());
+try {
+    console.log(loop1()()()());
+} catch (ex) {
+    console.error('loop error!');
+}
+
+var i = 666;
+console.log(global.i, this.i, module.exports);
