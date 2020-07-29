@@ -8,11 +8,14 @@
 <h1>Hello, World!</h1>
 </body>
 <script>
+    // 直接写在 window 上
+    window.b = 2;
+    // 隐式上升到 window 上
     c = 3;
     // 在浏览器环境就可以读到了
     var d = 4;
-    const foo = new Function('a', 'b', 'console.log(a, b, c, d); return a + b + c;');
-    console.log(foo(1, 2));
+    const foo = new Function('a', 'console.log(a, b, c, d);');
+    console.log(foo(1));
 
     const bar = function (fn) {
         var c = 4;
