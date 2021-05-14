@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         复制车牌号
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  try to take over the world!
 // @author       You
 // @match        https://gd.122.gov.cn/*
@@ -25,7 +25,7 @@
     $btn.innerText = '复制并翻页';
 
     $btn.addEventListener('click', () => {
-        const numbers = Array.from($('#tableContent tbody td:nth-child(3)')).map(td => td.innerText).join('\n');
+        const numbers = Array.from($('#tableContent tbody td:nth-child(3)')).map(td => td.innerText).join('\n') + '\n';
 
         navigator.clipboard.writeText(numbers).then(function() {
             /* clipboard successfully set */
